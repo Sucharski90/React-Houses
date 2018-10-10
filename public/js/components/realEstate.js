@@ -50,7 +50,7 @@ var Header = function (_Component) {
         null,
         _react2.default.createElement(
           'div',
-          null,
+          { className: 'logo' },
           ' LOGO '
         ),
         _react2.default.createElement(
@@ -59,22 +59,22 @@ var Header = function (_Component) {
           _react2.default.createElement(
             'a',
             { href: '#' },
-            'create ads'
+            'Create Ads'
           ),
           _react2.default.createElement(
             'a',
             { href: '#' },
-            'about us'
+            'About Us'
           ),
           _react2.default.createElement(
             'a',
             { href: '#' },
-            'log in'
+            'Log In'
           ),
           _react2.default.createElement(
             'a',
             { href: '#', className: 'register-btn' },
-            'register'
+            'Register'
           )
         )
       );
@@ -136,7 +136,13 @@ var App = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_Header2.default, null)
+        _react2.default.createElement(_Header2.default, null),
+        _react2.default.createElement(
+          'section',
+          { id: 'content-area' },
+          _react2.default.createElement(Filter, null),
+          _react2.default.createElement(Listings, null)
+        )
       );
     }
   }]);

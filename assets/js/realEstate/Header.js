@@ -10,13 +10,13 @@ export default class Header extends Component {
   }
   render () {
     return (<header> 
-        <div> LOGO </div>
+        <div className="logo"> LOGO </div>
 
         <nav>
-            <a href="#">create ads</a>
-            <a href="#">about us</a>
-            <a href="#">log in</a>
-            <a href="#" className="register-btn">register</a>
+            <a href="#">Create Ads</a>
+            <a href="#">About Us</a>
+            <a href="#">Log In</a>
+            <a href="#" className="register-btn">Register</a>
         </nav>
     
      </header>)
