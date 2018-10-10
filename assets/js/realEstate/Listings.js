@@ -6,7 +6,11 @@ export default class Listings extends Component {
     
   }
   render () {
-    return ()
+    return (
+        <section className="listings">
+        Listings
+        </section>
+    )
   }
 }
 
