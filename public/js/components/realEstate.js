@@ -394,10 +394,72 @@ var Listings = function (_Component) {
                 "Lowest Price"
               )
             ),
-            _react2.default.createElement("div", { className: "view" })
+            _react2.default.createElement(
+              "div",
+              { className: "view" },
+              _react2.default.createElement("i", { className: "fas fa-list", "aria-hidden": "true" }),
+              _react2.default.createElement("i", { className: "fas fa-th", "aria-hidden": "true" })
+            )
           )
         ),
-        _react2.default.createElement("section", { className: "listings-results" }),
+        _react2.default.createElement(
+          "section",
+          { className: "listings-results" },
+          _react2.default.createElement(
+            "div",
+            { className: "listing" },
+            _react2.default.createElement(
+              "div",
+              { className: "listing-img" },
+              _react2.default.createElement(
+                "span",
+                { className: "Address" },
+                "Address"
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "details" },
+                _react2.default.createElement(
+                  "div",
+                  { className: "user-img" },
+                  _react2.default.createElement(
+                    "div",
+                    { className: "user-details" },
+                    _react2.default.createElement(
+                      "span",
+                      { className: "user-name" },
+                      "Bob Tim"
+                    ),
+                    _react2.default.createElement(
+                      "span",
+                      { className: "post-date" },
+                      "10/10/2090"
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "listing-details" },
+                    _react2.default.createElement(
+                      "div",
+                      { className: "floor-space" },
+                      _react2.default.createElement("i", { className: "far fa-square", "aria-hidden": "true" }),
+                      _react2.default.createElement(
+                        "span",
+                        null,
+                        "1000 Ft\xB2"
+                      )
+                    ),
+                    _react2.default.createElement(
+                      "div",
+                      { className: "bedrooms" },
+                      _react2.default.createElement("i", { className: "fas fa-bed", "aria-hidden": "true" })
+                    )
+                  )
+                )
+              )
+            )
+          )
+        ),
         _react2.default.createElement("section", { className: "pagination" })
       );
     }
