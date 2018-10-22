@@ -32,6 +32,7 @@ export default class Listings extends Component {
               <span className="Address">Address</span>
                 <div className="details">
                 <div className="user-img">
+                </div>
                 <div className="user-details">
                   <span className="user-name">Bob Tim</span>
                   <span className="post-date">10/10/2090</span>
@@ -46,7 +47,7 @@ export default class Listings extends Component {
                     <i className="fa fa-bed" aria-hidden="true"></i>
                     <span> 3 bedrooms </span>
                     </div>
-                </div>
+                
                 </div>
                 </div>
                   <div className="bottom-info">

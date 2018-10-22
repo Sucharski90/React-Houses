@@ -142,15 +142,46 @@
             border-top-right-radius: 5px;
 
             .details {
+                padding: 20px;
                 position: absolute;
                 top: 0;
                 bottom: 0;
                 left: 0;
                 right: 0;
+                -webkit-border-top-left-radius: 5px;
+                -webkit-border-top-right-radius: 5px;
+                -moz-border-radius-topleft: 5px;
+                -moz-border-radius-topright: 5px;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
                 background: rgba(78,2,229,.8);
                 background: -moz-linear-gradient(-45deg, rgba(78,2,229,.8) 0%, rgba(78,2,229,.8) 100%);
                 background: -webkit-linear-gradient(-45deg, rgba(78,2,229,.8) 0%, rgba(78,2,229,.8) 100%);
-                background: linear-gradient(-45deg, rgba(78,2,229,.8) 0%, rgba(78,2,229,.8) 100%)
+                background: linear-gradient(-45deg, rgba(78,2,229,.8) 0%, rgba(78,2,229,.8) 100%);
+
+                .user-img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    border: 2px solid white;
+                    display: inline-block;
+                }
+                .user-details {
+                    vertical-align: top;
+                    display: inline-block;
+                    width: 70%;
+
+                    .user-name {
+                        font-weight: 300;
+                        font-size: 0.9rem;
+                        display: block;
+                        color: rgba(255,255,255, 1);
+                    }
+                    .post-date {
+                        display: block;
+                        color: rgba(255,255,255, .7);
+                    }
+                }
             }
         }
       }
