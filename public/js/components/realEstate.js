@@ -363,7 +363,7 @@ var Listings = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         "section",
-        { className: "listings" },
+        { id: "listings" },
         _react2.default.createElement(
           "section",
           { className: "search-area" },
@@ -374,7 +374,7 @@ var Listings = function (_Component) {
           { className: "sortby-area" },
           _react2.default.createElement(
             "div",
-            null,
+            { className: "results" },
             "390 results found"
           ),
           _react2.default.createElement(
@@ -397,8 +397,8 @@ var Listings = function (_Component) {
             _react2.default.createElement(
               "div",
               { className: "view" },
-              _react2.default.createElement("i", { className: "fas fa-list", "aria-hidden": "true" }),
-              _react2.default.createElement("i", { className: "fas fa-th", "aria-hidden": "true" })
+              _react2.default.createElement("i", { className: "fa fa-list", "aria-hidden": "true" }),
+              _react2.default.createElement("i", { className: "fa fa-th", "aria-hidden": "true" })
             )
           )
         ),
@@ -442,25 +442,87 @@ var Listings = function (_Component) {
                     _react2.default.createElement(
                       "div",
                       { className: "floor-space" },
-                      _react2.default.createElement("i", { className: "far fa-square", "aria-hidden": "true" }),
-                      _react2.default.createElement(
-                        "span",
-                        null,
-                        "1000 Ft\xB2"
-                      )
+                      _react2.default.createElement("i", { className: "far fa-square", "aria-hidden": "true" })
                     ),
                     _react2.default.createElement(
-                      "div",
-                      { className: "bedrooms" },
-                      _react2.default.createElement("i", { className: "fas fa-bed", "aria-hidden": "true" })
+                      "span",
+                      null,
+                      "1000 Ft\xB2"
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "bedrooms" },
+                    _react2.default.createElement("i", { className: "fa fa-bed", "aria-hidden": "true" }),
+                    _react2.default.createElement(
+                      "span",
+                      null,
+                      " 3 bedrooms "
                     )
                   )
                 )
               )
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "bottom-info" },
+              _react2.default.createElement(
+                "span",
+                null,
+                "$1000 / Month"
+              ),
+              _react2.default.createElement(
+                "span",
+                null,
+                _react2.default.createElement("i", { className: "fa fa-map-marker-alt", "aria-hidden": "true" }),
+                " Farmingdale, NY "
+              )
             )
           )
         ),
-        _react2.default.createElement("section", { className: "pagination" })
+        _react2.default.createElement(
+          "section",
+          { className: "pagination" },
+          _react2.default.createElement(
+            "ul",
+            { className: "pagination-nums" },
+            _react2.default.createElement(
+              "li",
+              null,
+              "Prev"
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "1"
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "2"
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "3"
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "4"
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "5"
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "Next"
+            )
+          )
+        )
       );
     }
   }]);
