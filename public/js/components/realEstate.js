@@ -407,82 +407,367 @@ var Listings = function (_Component) {
           { className: "listings-results" },
           _react2.default.createElement(
             "div",
-            { className: "listing" },
+            { className: "col-md-3" },
             _react2.default.createElement(
               "div",
-              { className: "listing-img" },
+              { className: "listing" },
               _react2.default.createElement(
-                "span",
-                { className: "Address" },
-                "Address"
+                "div",
+                { className: "listing-img" },
+                _react2.default.createElement(
+                  "span",
+                  { className: "address" },
+                  "40 Heart st"
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "details" },
+                  _react2.default.createElement(
+                    "div",
+                    { className: "user-img" },
+                    " "
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "col-md-9" },
+                    _react2.default.createElement(
+                      "div",
+                      { className: "user-details" },
+                      _react2.default.createElement(
+                        "span",
+                        { className: "user-name" },
+                        "Bob Tim"
+                      ),
+                      _react2.default.createElement(
+                        "span",
+                        { className: "post-date" },
+                        "10/10/2090"
+                      )
+                    ),
+                    _react2.default.createElement(
+                      "div",
+                      { className: "listing-details" },
+                      _react2.default.createElement(
+                        "div",
+                        { className: "floor-space" },
+                        _react2.default.createElement(
+                          "span",
+                          null,
+                          "1000 Ft\xB2"
+                        )
+                      ),
+                      _react2.default.createElement(
+                        "div",
+                        { className: "bedrooms" },
+                        _react2.default.createElement(
+                          "span",
+                          null,
+                          "3 bedrooms"
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      "div",
+                      { className: "view-btn" },
+                      "View Listing"
+                    )
+                  )
+                )
               ),
               _react2.default.createElement(
                 "div",
-                { className: "details" },
-                _react2.default.createElement("div", { className: "user-img" }),
+                { className: "bottom-info" },
                 _react2.default.createElement(
-                  "div",
-                  { className: "user-details" },
-                  _react2.default.createElement(
-                    "span",
-                    { className: "user-name" },
-                    "Bob Tim"
-                  ),
-                  _react2.default.createElement(
-                    "span",
-                    { className: "post-date" },
-                    "10/10/2090"
-                  )
+                  "span",
+                  { className: "price" },
+                  "$1000 / Month"
                 ),
                 _react2.default.createElement(
-                  "div",
-                  { className: "listing-details" },
-                  _react2.default.createElement(
-                    "div",
-                    { className: "floor-space" },
-                    _react2.default.createElement("i", { className: "far fa-square", "aria-hidden": "true" })
-                  ),
-                  _react2.default.createElement(
-                    "span",
-                    null,
-                    "1000 Ft\xB2"
-                  )
-                ),
-                _react2.default.createElement(
-                  "div",
-                  { className: "bedrooms" },
-                  _react2.default.createElement("i", { className: "fa fa-bed", "aria-hidden": "true" }),
-                  _react2.default.createElement(
-                    "span",
-                    null,
-                    " 3 bedrooms "
-                  )
+                  "span",
+                  { className: "location" },
+                  _react2.default.createElement("i", { className: "fa fa-map-marker-alt", "aria-hidden": "true" }),
+                  " Farmingdale, NY "
                 )
               )
-            ),
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "col-md-3" },
             _react2.default.createElement(
               "div",
-              { className: "bottom-info" },
+              { className: "listing" },
               _react2.default.createElement(
-                "span",
-                null,
-                "$1000 / Month"
+                "div",
+                { className: "listing-img" },
+                _react2.default.createElement(
+                  "span",
+                  { className: "address" },
+                  "40 Heart st"
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "details" },
+                  _react2.default.createElement(
+                    "div",
+                    { className: "col-md-3" },
+                    _react2.default.createElement(
+                      "div",
+                      { className: "user-img" },
+                      " "
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "col-md-9" },
+                    _react2.default.createElement(
+                      "div",
+                      { className: "user-details" },
+                      _react2.default.createElement(
+                        "span",
+                        { className: "user-name" },
+                        "Bob Tim"
+                      ),
+                      _react2.default.createElement(
+                        "span",
+                        { className: "post-date" },
+                        "10/10/2090"
+                      )
+                    ),
+                    _react2.default.createElement(
+                      "div",
+                      { className: "listing-details" },
+                      _react2.default.createElement(
+                        "div",
+                        { className: "floor-space" },
+                        _react2.default.createElement(
+                          "span",
+                          null,
+                          "1000 Ft\xB2"
+                        )
+                      ),
+                      _react2.default.createElement(
+                        "div",
+                        { className: "bedrooms" },
+                        _react2.default.createElement(
+                          "span",
+                          null,
+                          "3 bedrooms"
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      "div",
+                      { className: "view-btn" },
+                      "View Listing"
+                    )
+                  )
+                )
               ),
               _react2.default.createElement(
-                "span",
-                null,
-                _react2.default.createElement("i", { className: "fa fa-map-marker-alt", "aria-hidden": "true" }),
-                " Farmingdale, NY "
+                "div",
+                { className: "bottom-info" },
+                _react2.default.createElement(
+                  "span",
+                  { className: "price" },
+                  "$1000 / Month"
+                ),
+                _react2.default.createElement(
+                  "span",
+                  { className: "location" },
+                  _react2.default.createElement("i", { className: "fa fa-map-marker-alt", "aria-hidden": "true" }),
+                  " Farmingdale, NY "
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "col-md-3" },
+            _react2.default.createElement(
+              "div",
+              { className: "listing" },
+              _react2.default.createElement(
+                "div",
+                { className: "listing-img" },
+                _react2.default.createElement(
+                  "span",
+                  { className: "address" },
+                  "40 Heart st"
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "details" },
+                  _react2.default.createElement(
+                    "div",
+                    { className: "col-md-3" },
+                    _react2.default.createElement(
+                      "div",
+                      { className: "user-img" },
+                      " "
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "col-md-9" },
+                    _react2.default.createElement(
+                      "div",
+                      { className: "user-details" },
+                      _react2.default.createElement(
+                        "span",
+                        { className: "user-name" },
+                        "Bob Tim"
+                      ),
+                      _react2.default.createElement(
+                        "span",
+                        { className: "post-date" },
+                        "10/10/2090"
+                      )
+                    ),
+                    _react2.default.createElement(
+                      "div",
+                      { className: "listing-details" },
+                      _react2.default.createElement(
+                        "div",
+                        { className: "floor-space" },
+                        _react2.default.createElement(
+                          "span",
+                          null,
+                          "1000 Ft\xB2"
+                        )
+                      ),
+                      _react2.default.createElement(
+                        "div",
+                        { className: "bedrooms" },
+                        _react2.default.createElement(
+                          "span",
+                          null,
+                          "3 bedrooms"
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      "div",
+                      { className: "view-btn" },
+                      "View Listing"
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "bottom-info" },
+                _react2.default.createElement(
+                  "span",
+                  { className: "price" },
+                  "$1000 / Month"
+                ),
+                _react2.default.createElement(
+                  "span",
+                  { className: "location" },
+                  _react2.default.createElement("i", { className: "fa fa-map-marker-alt", "aria-hidden": "true" }),
+                  " Farmingdale, NY "
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "col-md-3" },
+            _react2.default.createElement(
+              "div",
+              { className: "listing" },
+              _react2.default.createElement(
+                "div",
+                { className: "listing-img" },
+                _react2.default.createElement(
+                  "span",
+                  { className: "address" },
+                  "40 Heart st"
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "details" },
+                  _react2.default.createElement(
+                    "div",
+                    { className: "col-md-3" },
+                    _react2.default.createElement(
+                      "div",
+                      { className: "user-img" },
+                      " "
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "col-md-9" },
+                    _react2.default.createElement(
+                      "div",
+                      { className: "user-details" },
+                      _react2.default.createElement(
+                        "span",
+                        { className: "user-name" },
+                        "Bob Tim"
+                      ),
+                      _react2.default.createElement(
+                        "span",
+                        { className: "post-date" },
+                        "10/10/2090"
+                      )
+                    ),
+                    _react2.default.createElement(
+                      "div",
+                      { className: "listing-details" },
+                      _react2.default.createElement(
+                        "div",
+                        { className: "floor-space" },
+                        _react2.default.createElement(
+                          "span",
+                          null,
+                          "1000 Ft\xB2"
+                        )
+                      ),
+                      _react2.default.createElement(
+                        "div",
+                        { className: "bedrooms" },
+                        _react2.default.createElement(
+                          "span",
+                          null,
+                          "3 bedrooms"
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      "div",
+                      { className: "view-btn" },
+                      "View Listing"
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "bottom-info" },
+                _react2.default.createElement(
+                  "span",
+                  { className: "price" },
+                  "$1000 / Month"
+                ),
+                _react2.default.createElement(
+                  "span",
+                  { className: "location" },
+                  _react2.default.createElement("i", { className: "fa fa-map-marker-alt", "aria-hidden": "true" }),
+                  " Farmingdale, NY "
+                )
               )
             )
           )
         ),
         _react2.default.createElement(
           "section",
-          { className: "pagination" },
+          { id: "pagination" },
           _react2.default.createElement(
             "ul",
-            { className: "pagination-nums" },
+            { className: "pages" },
             _react2.default.createElement(
               "li",
               null,
@@ -490,7 +775,7 @@ var Listings = function (_Component) {
             ),
             _react2.default.createElement(
               "li",
-              null,
+              { className: "active" },
               "1"
             ),
             _react2.default.createElement(

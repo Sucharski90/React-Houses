@@ -1,12 +1,15 @@
 #content-area {
     overflow: auto;
     width: 100%;
+    min-height: 100vh;
 }
+
 #filter {
     background: $grey;
     width: 30%;
     max-width: 300px;
     display: inline-block;
+    // remove line to play around with style
     float: left;
 
     .inside {
@@ -36,7 +39,6 @@
         .title {
             font-size: 0.9rem;
             display: block;
-            margin: 25px;
             margin-bottom: 1rem;
             color: $darkgrey;
         }
@@ -77,8 +79,9 @@
             background: transparent;
             font-size: 2rem;
             border: none;
-            border-bottom: 2px solid $lightgrey;
+            border-bottom: 2px solid $darkgrey;
             margin-bottom: 20px;
+            font-weight: 100;
             color: $lightgrey;
 
         }
@@ -88,12 +91,13 @@
         margin-bottom: 20px;
 
         .results {
-            color: $lightgrey;
+            color: $darkgrey;
             font-size: 0.8rem;
             display: inline-block;
         }
         .sort-options {
             float: right;
+
             select {
                 font-size: 0.9rem;
                 font-weight: 300;
@@ -116,9 +120,9 @@
     }
     .listings-results {
         margin-bottom: 60px;
-        .listing{
+        
+        .listing {
           background: #fff;
-          width: 33.33%;
           border-radius: 5px;
           -webkit-box-shadow: 0 9px 54px -4px rgba(224, 224, 224,1);
           -moz-box-shadow: 0 9px 54px -4px rgba(224, 224, 224,1);
@@ -141,8 +145,24 @@
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
 
+            &:hover {
+                .details {
+                    opacity: 1;
+                }
+                .address {
+                    opacity: 0;
+                }
+            }
+            .address {
+                position: absolute;
+                bottom: 20px;
+                opacity: 1;
+                transition: all 450ms ease-in-out;
+            }
             .details {
-                padding: 20px;
+                transition: all 450ms ease-in-out;
+                opacity: 0;
+                padding: 30px;
                 position: absolute;
                 top: 0;
                 bottom: 0;
@@ -160,29 +180,122 @@
                 background: linear-gradient(-45deg, rgba(78,2,229,.8) 0%, rgba(78,2,229,.8) 100%);
 
                 .user-img {
-                    width: 40px;
-                    height: 40px;
+                    width: 35px;
+                    height: 35px;
                     border-radius: 50%;
                     border: 2px solid white;
                     display: inline-block;
+                    background: url("/img/logo.png") no-repeat center center;
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    -o-background-size: cover;
+                    background-size: cover;
                 }
                 .user-details {
                     vertical-align: top;
                     display: inline-block;
-                    width: 70%;
 
                     .user-name {
                         font-weight: 300;
                         font-size: 0.9rem;
                         display: block;
                         color: rgba(255,255,255, 1);
+                        margin-top: 3px;
+                        margin-bottom: 5px;
                     }
                     .post-date {
+                        font-size: 0.9rem;
                         display: block;
                         color: rgba(255,255,255, .7);
                     }
                 }
+                .listing-details {
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+
+                    .fa{
+                        display: inline-block;
+                        font-size: 20px;
+                        margin-top: 15px;
+                    }
+                    span {
+                        font-weight: 300;
+                        font-size: 0.8rem;
+                        display: inline-block;
+                        vertical-align: top;
+                        position: relative;
+                        top: 3px;
+                    }
+                    .floor-space {
+                        margin-bottom: 10px;
+                    }
+
+                }
             }
         }
-      }
+        .bottom-info{
+            padding: 20px 15px;
+            .price {
+                font-size: 1rem;
+                display: block;
+                margin-bottom: 10px;
+                color: $darkgrey;
+            }
+            .location {
+                font-size: 1.2rem;
+                display: block;
+                color: $lightgrey;
+            }
+        }
+    }
+}
+
+
+.view-btn {
+    background: black;
+    padding: 8px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 150px;
+    transition: background 250ms ease-in-out;
+    
+    &:hover {
+    background: $pink;
+    cursor: pointer;
+    }
+}
+
+#pagination{
+    text-align: center;
+    .pages {
+        display: inline-block;
+        background: white;
+        -webkit-box-shadow: 0 9px 54px -4px rgba(224, 224, 224,1);
+        -moz-box-shadow: 0 9px 54px -4px rgba(224, 224, 224,1);
+        box-shadow: 0 9px 54px -4px rgba(224, 224, 224,1);
+
+        li {
+            display: inline-block;
+            padding: 20px 30px;
+            &:hover,
+            &.active {
+                color: white;
+                font-weight: 700;
+                background: $pink;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.col-md-3 {
+    width: 25%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 15px;
+}
+.col-md-9 {
+    width: 75%;
+    display: inline-block;
 }
