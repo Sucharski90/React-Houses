@@ -3,7 +3,51 @@ import React, { Component} from 'react'
 export default class Listings extends Component {
   constructor () {
     super()
-    
+    this.state = {
+      name: 'matt'
+    }
+    this.loopListings = this.loopListings.bind(this)
+  }
+  loopListings () {
+    let {listingsData} = this.props
+
+    return listingsData.map((listing) => {
+        return (
+          <div className="col-md-3">
+    <div className="listing">
+      <div className="listing-img">
+        <span className="address">40 Heart st</span>
+          <div className="details">     
+          <div className="user-img"> </div>
+           <div className="col-md-9">
+          <div className="user-details">
+            <span className="user-name">Bob Tim</span>
+            <span className="post-date">10/10/2090</span>
+          </div>      
+          <div className="listing-details">
+            <div className="floor-space">          
+              {/* <i className="fa fa-square"></i> */}
+              <span>1000 Ft&sup2;</span>
+            </div>
+            <div className="bedrooms">
+              {/* <i className="fa fa-bed"></i> */}
+              <span>3 bedrooms</span>
+              </div>
+            </div>
+            <div className="view-btn">
+              View Listing
+            </div>
+          </div>
+          </div>
+          </div>
+            <div className="bottom-info">
+              <span className="price">$1000 / Month</span> 
+              <span className="location"><i className="fa fa-map-marker-alt" aria-hidden="true"></i> Farmingdale, NY </span> 
+            </div>
+        </div>
+        </div>
+        )
+    })
   }
   render () {
     return (
@@ -27,183 +71,9 @@ export default class Listings extends Component {
         </section>
 
         <section className="listings-results">
-        <div className="col-md-3">
-          <div className="listing">
-            <div className="listing-img">
-              <span className="address">40 Heart st</span>
-                <div className="details">
-
-                
-                <div className="user-img"> </div>
-                
-
-                <div className="col-md-9">
-                <div className="user-details">
-                  <span className="user-name">Bob Tim</span>
-                  <span className="post-date">10/10/2090</span>
-                </div>
-                
-                <div className="listing-details">
-                  <div className="floor-space">
-                  
-                    {/* <i className="fa fa-square"></i> */}
-                    <span>1000 Ft&sup2;</span>
-                  </div>
-                  <div className="bedrooms">
-                    {/* <i className="fa fa-bed"></i> */}
-                    <span>3 bedrooms</span>
-                    </div>
-                  </div>
-
-                  <div className="view-btn">
-                    View Listing
-                  </div>
-                </div>
-                  
-
-                </div>
-                </div>
-                  <div className="bottom-info">
-                    <span className="price">$1000 / Month</span> 
-                    <span className="location"><i className="fa fa-map-marker-alt" aria-hidden="true"></i> Farmingdale, NY </span> 
-                  </div>
-              </div>
-              </div>
-
-
-              <div className="col-md-3">
-          <div className="listing">
-            <div className="listing-img">
-              <span className="address">40 Heart st</span>
-                <div className="details">
-
-                <div className="col-md-3">
-                <div className="user-img"> </div>
-                </div>
-
-                <div className="col-md-9">
-                <div className="user-details">
-                  <span className="user-name">Bob Tim</span>
-                  <span className="post-date">10/10/2090</span>
-                </div>
-                
-                <div className="listing-details">
-                  <div className="floor-space">
-                  
-                    {/* <i className="fa fa-square"></i> */}
-                    <span>1000 Ft&sup2;</span>
-                  </div>
-                  <div className="bedrooms">
-                    {/* <i className="fa fa-bed"></i> */}
-                    <span>3 bedrooms</span>
-                    </div>
-                  </div>
-
-                  <div className="view-btn">
-                    View Listing
-                  </div>
-                </div>
-                  
-
-                </div>
-                </div>
-                  <div className="bottom-info">
-                    <span className="price">$1000 / Month</span> 
-                    <span className="location"><i className="fa fa-map-marker-alt" aria-hidden="true"></i> Farmingdale, NY </span> 
-                  </div>
-              </div>
-              </div>
-
-              <div className="col-md-3">
-          <div className="listing">
-            <div className="listing-img">
-              <span className="address">40 Heart st</span>
-                <div className="details">
-
-                <div className="col-md-3">
-                <div className="user-img"> </div>
-                </div>
-
-                <div className="col-md-9">
-                <div className="user-details">
-                  <span className="user-name">Bob Tim</span>
-                  <span className="post-date">10/10/2090</span>
-                </div>
-                
-                <div className="listing-details">
-                  <div className="floor-space">
-                  
-                    {/* <i className="fa fa-square"></i> */}
-                    <span>1000 Ft&sup2;</span>
-                  </div>
-                  <div className="bedrooms">
-                    {/* <i className="fa fa-bed"></i> */}
-                    <span>3 bedrooms</span>
-                    </div>
-                  </div>
-
-                  <div className="view-btn">
-                    View Listing
-                  </div>
-                </div>
-                  
-
-                </div>
-                </div>
-                  <div className="bottom-info">
-                    <span className="price">$1000 / Month</span> 
-                    <span className="location"><i className="fa fa-map-marker-alt" aria-hidden="true"></i> Farmingdale, NY </span> 
-                  </div>
-              </div>
-              </div>
-
-
-              <div className="col-md-3">
-          <div className="listing">
-            <div className="listing-img">
-              <span className="address">40 Heart st</span>
-                <div className="details">
-
-                <div className="col-md-3">
-                <div className="user-img"> </div>
-                </div>
-
-                <div className="col-md-9">
-                <div className="user-details">
-                  <span className="user-name">Bob Tim</span>
-                  <span className="post-date">10/10/2090</span>
-                </div>
-                
-                <div className="listing-details">
-                  <div className="floor-space">
-                  
-                    {/* <i className="fa fa-square"></i> */}
-                    <span>1000 Ft&sup2;</span>
-                  </div>
-                  <div className="bedrooms">
-                    {/* <i className="fa fa-bed"></i> */}
-                    <span>3 bedrooms</span>
-                    </div>
-                  </div>
-
-                  <div className="view-btn">
-                    View Listing
-                  </div>
-                </div>
-                  
-
-                </div>
-                </div>
-                  <div className="bottom-info">
-                    <span className="price">$1000 / Month</span> 
-                    <span className="location"><i className="fa fa-map-marker-alt" aria-hidden="true"></i> Farmingdale, NY </span> 
-                  </div>
-              </div>
-              </div>
-
-
-              
-        </section>
+        
+              {this.loopListings()}
+            </section>
 
         <section id="pagination">
           <ul className="pages">
