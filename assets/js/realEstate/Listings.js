@@ -11,12 +11,12 @@ export default class Listings extends Component {
   loopListings () {
     let {listingsData} = this.props
 
-    return listingsData.map((listing) => {
+    return listingsData.map((listing, index) => {
         return (
-          <div className="col-md-3">
-    <div className="listing">
-      <div className="listing-img">
-        <span className="address">40 Heart st</span>
+          <div className="col-md-3" key={index}>
+    <div className="listing" >
+      <div className="listing-img" style={{background: `url("${listing.image}") no-repeat center center`}}>
+        <span className="address">{listing.address}</span>
           <div className="details">     
           <div className="user-img"> </div>
            <div className="col-md-9">
@@ -27,11 +27,11 @@ export default class Listings extends Component {
           <div className="listing-details">
             <div className="floor-space">          
               {/* <i className="fa fa-square"></i> */}
-              <span>1000 Ft&sup2;</span>
+              <span>{listing.floorSpace} Ft&sup2;</span>
             </div>
             <div className="bedrooms">
               {/* <i className="fa fa-bed"></i> */}
-              <span>3 bedrooms</span>
+              <span>{listing.rooms} bedrooms</span>
               </div>
             </div>
             <div className="view-btn">
@@ -41,8 +41,8 @@ export default class Listings extends Component {
           </div>
           </div>
             <div className="bottom-info">
-              <span className="price">$1000 / Month</span> 
-              <span className="location"><i className="fa fa-map-marker-alt" aria-hidden="true"></i> Farmingdale, NY </span> 
+              <span className="price">${listing.price}</span> 
+              <span className="location"><i className="fa fa-map-marker-alt" aria-hidden="true"></i> {listing.city}, {listing.state} </span> 
             </div>
         </div>
         </div>
