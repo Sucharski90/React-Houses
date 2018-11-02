@@ -21,10 +21,10 @@ class App extends Component {
       finished_basement: false,
       gym: false,
       swiming_pool: false,
-      flteredData : listingsData
+      filteredData : listingsData
     }
     this.change = this.change.bind(this)
-    this.flteredData = this.flteredData.bind(this)
+    this.filteredData = this.filteredData.bind(this)
   }
   change (event) {
     let name = event.target.name
@@ -34,10 +34,17 @@ class App extends Component {
       [name]: value
     }, () => {
       console.log(this.state)
+      this.filteredData()
     })
   }
-  flteredDate() {
+  filteredData() {
+      var newData = this.state.listingsData.filter((item) => {
+        return item.price >= this.state.min_price && item.price <= this.state.max_price
+      })
 
+      this.setState({
+        filteredData : newData
+      })
   }
   render () {
     return (<div> 

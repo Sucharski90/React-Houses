@@ -144,9 +144,9 @@ var App = function (_Component) {
       max_price: 10000000,
       min_floor_space: 0,
       max_floor_space: 5000
-    }, _defineProperty(_this$state, 'min_floor_space', 0), _defineProperty(_this$state, 'max_floor_space', 5000), _defineProperty(_this$state, 'elevator', false), _defineProperty(_this$state, 'finished_basement', false), _defineProperty(_this$state, 'gym', false), _defineProperty(_this$state, 'swiming_pool', false), _defineProperty(_this$state, 'flteredData', _listingsData2.default), _this$state);
+    }, _defineProperty(_this$state, 'min_floor_space', 0), _defineProperty(_this$state, 'max_floor_space', 5000), _defineProperty(_this$state, 'elevator', false), _defineProperty(_this$state, 'finished_basement', false), _defineProperty(_this$state, 'gym', false), _defineProperty(_this$state, 'swiming_pool', false), _defineProperty(_this$state, 'filteredData', _listingsData2.default), _this$state);
     _this.change = _this.change.bind(_this);
-    _this.flteredData = _this.flteredData.bind(_this);
+    _this.filteredData = _this.filteredData.bind(_this);
     return _this;
   }
 
@@ -160,11 +160,22 @@ var App = function (_Component) {
 
       this.setState(_defineProperty({}, name, value), function () {
         console.log(_this2.state);
+        _this2.filteredData();
       });
     }
   }, {
-    key: 'flteredDate',
-    value: function flteredDate() {}
+    key: 'filteredData',
+    value: function filteredData() {
+      var _this3 = this;
+
+      var newData = this.state.listingsData.filter(function (item) {
+        return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price;
+      });
+
+      this.setState({
+        filteredData: newData
+      });
+    }
   }, {
     key: 'render',
     value: function render() {
