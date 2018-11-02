@@ -28,22 +28,22 @@ export default class Filter extends Component {
         </select>
         <div className="filters price">
             <span className="title">Price</span>
-            <input type="text" name="min-price" className="min-price" onChange={this.props.change} value="0" />
-            <input type="text" name="max-price" className="max-price" onChange={this.props.change} value="100000000"/>
+            <input type="text" name="min_price" className="min-price" onChange={this.props.change} value={this.props.globalState.min_price} />
+            <input type="text" name="max_price" className="max-price" onChange={this.props.change} value={this.props.globalState.max_price} />
         </div>
 
         <div className="filters floor-space">
             <span className="title">Floor Space</span>
-            <input type="text" name="min-floor-space" className="min-floor-space" onChange={this.props.change} value="0"/>
-            <input type="text" name="max-floor-space" className="max-floor-space" onChange={this.props.change} value="5000"/>
+            <input type="text" name="min_floor_space" className="min-floor-space" onChange={this.props.change} value={this.props.globalState.min_floor_space}/>
+            <input type="text" name="max_floor_space" className="max-floor-space" onChange={this.props.change} value={this.props.globalState.max_floor_space}/>
         </div>
 
         <div className="filters extras">
         <span className="title">Extras</span>
-            <label for="extras"><span>Elevators</span> <input name="extras" value="elevator" type="checkbox" onChange={this.props.change}/></label>
-            <label for="extras"><span>Swiming Pool</span> <input name="extras" value="swiming-pool" type="checkbox" onChange={this.props.change}/></label>
-            <label for="extras"><span>Finished Basement</span> <input name="extras" value="finished-basement" type="checkbox" onChange={this.props.change}/></label>
-            <label for="extras"><span>Gym</span> <input name="extras" value="gym" type="checkbox" onChange={this.props.change}/></label>
+            <label for="extras"><span>Elevators</span> <input name="elevator" value="elevator" type="checkbox" onChange={this.props.change}/></label>
+            <label for="extras"><span>Swiming Pool</span> <input name="swiming_pool" value="swiming_pool" type="checkbox" onChange={this.props.change}/></label>
+            <label for="extras"><span>Finished Basement</span> <input name="finished_basement" value="finished_basement" type="checkbox" onChange={this.props.change}/></label>
+            <label for="extras"><span>Gym</span> <input name="gym" value="gym" type="checkbox" onChange={this.props.change}/></label>
         </div>
         </div>
         </section>

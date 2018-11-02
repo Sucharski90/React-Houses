@@ -119,6 +119,8 @@ var _listingsData2 = _interopRequireDefault(_listingsData);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -129,27 +131,43 @@ var App = function (_Component) {
   _inherits(App, _Component);
 
   function App() {
+    var _this$state;
+
     _classCallCheck(this, App);
 
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
 
-    _this.state = {
-      name: 'Joe',
-      listingsData: _listingsData2.default
-    };
+    _this.state = (_this$state = {
+      name: 'Matt',
+      listingsData: _listingsData2.default,
+      min_price: 0,
+      max_price: 10000000,
+      min_floor_space: 0,
+      max_floor_space: 5000
+    }, _defineProperty(_this$state, 'min_floor_space', 0), _defineProperty(_this$state, 'max_floor_space', 5000), _defineProperty(_this$state, 'elevator', false), _defineProperty(_this$state, 'finished_basement', false), _defineProperty(_this$state, 'gym', false), _defineProperty(_this$state, 'swiming_pool', false), _defineProperty(_this$state, 'flteredData', _listingsData2.default), _this$state);
     _this.change = _this.change.bind(_this);
+    _this.flteredData = _this.flteredData.bind(_this);
     return _this;
   }
 
   _createClass(App, [{
     key: 'change',
     value: function change(event) {
-      console.log(event.target.value);
+      var _this2 = this;
+
+      var name = event.target.name;
+      var value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+
+      this.setState(_defineProperty({}, name, value), function () {
+        console.log(_this2.state);
+      });
     }
+  }, {
+    key: 'flteredDate',
+    value: function flteredDate() {}
   }, {
     key: 'render',
     value: function render() {
-      console.log(this.state);
       return _react2.default.createElement(
         'div',
         null,
@@ -157,8 +175,8 @@ var App = function (_Component) {
         _react2.default.createElement(
           'section',
           { id: 'content-area' },
-          _react2.default.createElement(_Filter2.default, { change: this.change }),
-          _react2.default.createElement(_Listings2.default, { listingsData: this.state.listingsData })
+          _react2.default.createElement(_Filter2.default, { change: this.change, globalState: this.state }),
+          _react2.default.createElement(_Listings2.default, { listingsData: this.state.filteredData })
         )
       );
     }
@@ -290,8 +308,8 @@ var Filter = function (_Component) {
                             { className: "title" },
                             "Price"
                         ),
-                        _react2.default.createElement("input", { type: "text", name: "min-price", className: "min-price", onChange: this.props.change, value: "0" }),
-                        _react2.default.createElement("input", { type: "text", name: "max-price", className: "max-price", onChange: this.props.change, value: "100000000" })
+                        _react2.default.createElement("input", { type: "text", name: "min_price", className: "min-price", onChange: this.props.change, value: this.props.globalState.min_price }),
+                        _react2.default.createElement("input", { type: "text", name: "max_price", className: "max-price", onChange: this.props.change, value: this.props.globalState.max_price })
                     ),
                     _react2.default.createElement(
                         "div",
@@ -301,8 +319,8 @@ var Filter = function (_Component) {
                             { className: "title" },
                             "Floor Space"
                         ),
-                        _react2.default.createElement("input", { type: "text", name: "min-floor-space", className: "min-floor-space", onChange: this.props.change, value: "0" }),
-                        _react2.default.createElement("input", { type: "text", name: "max-floor-space", className: "max-floor-space", onChange: this.props.change, value: "5000" })
+                        _react2.default.createElement("input", { type: "text", name: "min_floor_space", className: "min-floor-space", onChange: this.props.change, value: this.props.globalState.min_floor_space }),
+                        _react2.default.createElement("input", { type: "text", name: "max_floor_space", className: "max-floor-space", onChange: this.props.change, value: this.props.globalState.max_floor_space })
                     ),
                     _react2.default.createElement(
                         "div",
@@ -321,7 +339,7 @@ var Filter = function (_Component) {
                                 "Elevators"
                             ),
                             " ",
-                            _react2.default.createElement("input", { name: "extras", value: "elevator", type: "checkbox", onChange: this.props.change })
+                            _react2.default.createElement("input", { name: "elevator", value: "elevator", type: "checkbox", onChange: this.props.change })
                         ),
                         _react2.default.createElement(
                             "label",
@@ -332,7 +350,7 @@ var Filter = function (_Component) {
                                 "Swiming Pool"
                             ),
                             " ",
-                            _react2.default.createElement("input", { name: "extras", value: "swiming-pool", type: "checkbox", onChange: this.props.change })
+                            _react2.default.createElement("input", { name: "swiming_pool", value: "swiming_pool", type: "checkbox", onChange: this.props.change })
                         ),
                         _react2.default.createElement(
                             "label",
@@ -343,7 +361,7 @@ var Filter = function (_Component) {
                                 "Finished Basement"
                             ),
                             " ",
-                            _react2.default.createElement("input", { name: "extras", value: "finished-basement", type: "checkbox", onChange: this.props.change })
+                            _react2.default.createElement("input", { name: "finished_basement", value: "finished_basement", type: "checkbox", onChange: this.props.change })
                         ),
                         _react2.default.createElement(
                             "label",
@@ -354,7 +372,7 @@ var Filter = function (_Component) {
                                 "Gym"
                             ),
                             " ",
-                            _react2.default.createElement("input", { name: "extras", value: "gym", type: "checkbox", onChange: this.props.change })
+                            _react2.default.createElement("input", { name: "gym", value: "gym", type: "checkbox", onChange: this.props.change })
                         )
                     )
                 )
@@ -501,6 +519,10 @@ var Listings = function (_Component) {
     value: function loopListings() {
       var listingsData = this.props.listingsData;
 
+
+      if (listingsData == undefined || listingsData.length == 0) {
+        return "Sorry your filter did not match any of our listings";
+      }
 
       return listingsData.map(function (listing, index) {
         return _react2.default.createElement(
