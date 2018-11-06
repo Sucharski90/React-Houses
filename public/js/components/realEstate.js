@@ -168,12 +168,14 @@ var App = function (_Component) {
     value: function filteredData() {
       var _this3 = this;
 
+      console.log(state);
       var newData = this.state.listingsData.filter(function (item) {
         return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price;
       });
 
       this.setState({
         filteredData: newData
+
       });
     }
   }, {

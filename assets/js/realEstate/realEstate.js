@@ -38,12 +38,14 @@ class App extends Component {
     })
   }
   filteredData() {
+    console.log(state)
       var newData = this.state.listingsData.filter((item) => {
         return item.price >= this.state.min_price && item.price <= this.state.max_price
       })
 
       this.setState({
         filteredData : newData
+        
       })
   }
   render () {
