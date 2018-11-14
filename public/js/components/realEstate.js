@@ -140,6 +140,9 @@ var App = function (_Component) {
     _this.state = (_this$state = {
       name: 'Matt',
       listingsData: _listingsData2.default,
+      neighbourhood: "Farmingdale",
+      homeType: "Apartment",
+      bedrooms: 1,
       min_price: 0,
       max_price: 10000000,
       min_floor_space: 0,
@@ -168,9 +171,8 @@ var App = function (_Component) {
     value: function filteredData() {
       var _this3 = this;
 
-      console.log(state);
       var newData = this.state.listingsData.filter(function (item) {
-        return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price;
+        return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price && item.floorSpace >= _this3.state.min_floor_space && item.floorSpace <= _this3.state.max_floor_space;
       });
 
       this.setState({
