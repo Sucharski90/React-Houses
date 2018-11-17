@@ -140,9 +140,9 @@ var App = function (_Component) {
     _this.state = (_this$state = {
       name: 'Matt',
       listingsData: _listingsData2.default,
-      neighbourhood: "Farmingdale",
-      homeType: "Apartment",
-      bedrooms: 1,
+      city: "All",
+      homeType: "All",
+      bedrooms: "0",
       min_price: 0,
       max_price: 10000000,
       min_floor_space: 0,
@@ -174,6 +174,12 @@ var App = function (_Component) {
       var newData = this.state.listingsData.filter(function (item) {
         return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price && item.floorSpace >= _this3.state.min_floor_space && item.floorSpace <= _this3.state.max_floor_space;
       });
+
+      if (this.state.city != "All") {
+        newData = newData.filter(function (item) {
+          return item.city == _this3.state.city;
+        });
+      }
 
       this.setState({
         filteredData: newData
@@ -255,20 +261,20 @@ var Filter = function (_Component) {
                     ),
                     _react2.default.createElement(
                         "select",
-                        { name: "neighbourhood", className: "filters neighbourhood", onChange: this.props.change },
+                        { name: "city", className: "filters city", onChange: this.props.change },
                         _react2.default.createElement(
                             "option",
                             { value: "all" },
-                            "All Towns"
+                            "All Cities"
                         ),
                         _react2.default.createElement(
                             "option",
-                            { value: "farmingdale" },
+                            { value: "Farmingdale" },
                             "Farmingdale"
                         ),
                         _react2.default.createElement(
                             "option",
-                            { value: "massapequa" },
+                            { value: "Massapequa" },
                             "Massapequa"
                         )
                     ),
