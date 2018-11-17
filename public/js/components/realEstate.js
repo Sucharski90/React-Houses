@@ -255,7 +255,12 @@ var Filter = function (_Component) {
                     ),
                     _react2.default.createElement(
                         "select",
-                        { name: "neighborhood", className: "filters neighborhood", onChange: this.props.change },
+                        { name: "neighbourhood", className: "filters neighbourhood", onChange: this.props.change },
+                        _react2.default.createElement(
+                            "option",
+                            { value: "all" },
+                            "All Towns"
+                        ),
                         _react2.default.createElement(
                             "option",
                             { value: "farmingdale" },
@@ -269,7 +274,12 @@ var Filter = function (_Component) {
                     ),
                     _react2.default.createElement(
                         "select",
-                        { name: "housetype", className: "filters housetype", onChange: this.props.change },
+                        { name: "homeType", className: "filters homeType", onChange: this.props.change },
+                        _react2.default.createElement(
+                            "option",
+                            { value: "All" },
+                            "All Types"
+                        ),
                         _react2.default.createElement(
                             "option",
                             { value: "House" },
@@ -291,28 +301,38 @@ var Filter = function (_Component) {
                         { name: "bedrooms", className: "filters bedrooms", onChange: this.props.change },
                         _react2.default.createElement(
                             "option",
+                            { value: "0" },
+                            "0+ BR"
+                        ),
+                        _react2.default.createElement(
+                            "option",
+                            { value: "1" },
+                            "1+ BR"
+                        ),
+                        _react2.default.createElement(
+                            "option",
                             { value: "2" },
-                            "2 BR"
+                            "2+ BR"
                         ),
                         _react2.default.createElement(
                             "option",
                             { value: "3" },
-                            "3 BR"
+                            "3+ BR"
                         ),
                         _react2.default.createElement(
                             "option",
                             { value: "4" },
-                            "4 BR"
+                            "4+ BR"
                         ),
                         _react2.default.createElement(
                             "option",
                             { value: "5" },
-                            "5 BR"
+                            "5+ BR"
                         ),
                         _react2.default.createElement(
                             "option",
                             { value: "6" },
-                            "6 BR"
+                            "6+ BR"
                         )
                     ),
                     _react2.default.createElement(
