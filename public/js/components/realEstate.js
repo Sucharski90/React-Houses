@@ -172,12 +172,18 @@ var App = function (_Component) {
       var _this3 = this;
 
       var newData = this.state.listingsData.filter(function (item) {
-        return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price && item.floorSpace >= _this3.state.min_floor_space && item.floorSpace <= _this3.state.max_floor_space;
+        return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price && item.floorSpace >= _this3.state.min_floor_space && item.floorSpace <= _this3.state.max_floor_space && item.rooms >= _this3.state.bedrooms;
       });
 
       if (this.state.city != "All") {
         newData = newData.filter(function (item) {
           return item.city == _this3.state.city;
+        });
+      }
+
+      if (this.state.homeType != "All") {
+        newData = newData.filter(function (item) {
+          return item.homeType == _this3.state.homeType;
         });
       }
 
@@ -260,11 +266,16 @@ var Filter = function (_Component) {
                         "Filter"
                     ),
                     _react2.default.createElement(
+                        "label",
+                        { "for": "city" },
+                        "City"
+                    ),
+                    _react2.default.createElement(
                         "select",
                         { name: "city", className: "filters city", onChange: this.props.change },
                         _react2.default.createElement(
                             "option",
-                            { value: "all" },
+                            { value: "All" },
                             "All Cities"
                         ),
                         _react2.default.createElement(
@@ -277,6 +288,11 @@ var Filter = function (_Component) {
                             { value: "Massapequa" },
                             "Massapequa"
                         )
+                    ),
+                    _react2.default.createElement(
+                        "label",
+                        { "for": "homeType" },
+                        "Type"
                     ),
                     _react2.default.createElement(
                         "select",
@@ -301,6 +317,11 @@ var Filter = function (_Component) {
                             { value: "Apartment" },
                             "Apartment"
                         )
+                    ),
+                    _react2.default.createElement(
+                        "label",
+                        { "for": "bedrooms" },
+                        "Rooms"
                     ),
                     _react2.default.createElement(
                         "select",

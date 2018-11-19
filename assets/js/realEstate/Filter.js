@@ -10,17 +10,20 @@ export default class Filter extends Component {
         <section id="filter">
         <div className="inside">
         <h4>Filter</h4>
+        <label for="city">City</label>
         <select name="city" className="filters city" onChange={this.props.change}>
-            <option value="all">All Cities</option>
+            <option value="All">All Cities</option>
             <option value="Farmingdale">Farmingdale</option>
             <option value="Massapequa">Massapequa</option>
         </select>
+        <label for="homeType">Type</label>
         <select name="homeType" className="filters homeType" onChange={this.props.change}>
             <option value="All">All Types</option>
             <option value="House">House</option>
             <option value="Condo">Condo</option>
             <option value="Apartment">Apartment</option>
         </select>
+        <label for="bedrooms">Rooms</label>
         <select name="bedrooms" className="filters bedrooms" onChange={this.props.change}>
             <option value="0">0+ BR</option>
             <option value="1">1+ BR</option>
