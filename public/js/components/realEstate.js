@@ -119,6 +119,8 @@ var _listingsData2 = _interopRequireDefault(_listingsData);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -150,6 +152,7 @@ var App = function (_Component) {
     }, _defineProperty(_this$state, 'min_floor_space', 0), _defineProperty(_this$state, 'max_floor_space', 5000), _defineProperty(_this$state, 'elevator', false), _defineProperty(_this$state, 'finished_basement', false), _defineProperty(_this$state, 'gym', false), _defineProperty(_this$state, 'swiming_pool', false), _defineProperty(_this$state, 'filteredData', _listingsData2.default), _this$state);
     _this.change = _this.change.bind(_this);
     _this.filteredData = _this.filteredData.bind(_this);
+    _this.populateForm = _this.populateForm.bind(_this);
     return _this;
   }
 
@@ -191,6 +194,28 @@ var App = function (_Component) {
         filteredData: newData
 
       });
+    }
+  }, {
+    key: 'populateForm',
+    value: function populateForm() {
+      // city
+      var cities = this.state.listingsData.map(function (item) {
+        return item.cities;
+        cities = [].concat(_toConsumableArray(cities));
+      });
+      cities = new Set(cities);
+      // types
+      var homeTypes = this.state.listingsData.map(function (item) {
+        return item.homeType;
+        homeTypes = [].concat(_toConsumableArray(homeTypes));
+      });
+      cities = new Set(cities);
+      // rooms
+      var rooms = this.state.listingsData.map(function (item) {
+        return item.rooms;
+        rooms = [].concat(_toConsumableArray(rooms));
+      });
+      cities = new Set(cities);
     }
   }, {
     key: 'render',
@@ -267,7 +292,7 @@ var Filter = function (_Component) {
                     ),
                     _react2.default.createElement(
                         "label",
-                        { "for": "city" },
+                        { htmlFor: "city" },
                         "City"
                     ),
                     _react2.default.createElement(
@@ -291,7 +316,7 @@ var Filter = function (_Component) {
                     ),
                     _react2.default.createElement(
                         "label",
-                        { "for": "homeType" },
+                        { htmlFor: "homeType" },
                         "Type"
                     ),
                     _react2.default.createElement(
@@ -320,7 +345,7 @@ var Filter = function (_Component) {
                     ),
                     _react2.default.createElement(
                         "label",
-                        { "for": "bedrooms" },
+                        { htmlFor: "bedrooms" },
                         "Rooms"
                     ),
                     _react2.default.createElement(

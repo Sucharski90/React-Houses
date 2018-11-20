@@ -28,6 +28,7 @@ class App extends Component {
     }
     this.change = this.change.bind(this)
     this.filteredData = this.filteredData.bind(this)
+    this.populateForm = this.populateForm.bind(this)
   }
   change (event) {
     let name = event.target.name
@@ -62,6 +63,27 @@ class App extends Component {
         filteredData : newData
         
       })
+  }
+
+  populateForm() {
+    // city
+    let cities = this.state.listingsData.map((item) => {
+      return item.cities
+      cities = [...cities]
+    })
+    cities = new Set(cities)
+    // types
+    let homeTypes = this.state.listingsData.map((item) => {
+      return item.homeType
+      homeTypes = [...homeTypes]
+    })
+    cities = new Set(cities)
+    // rooms
+    let rooms = this.state.listingsData.map((item) => {
+      return item.rooms
+      rooms = [...rooms]
+    })
+    cities = new Set(cities)
   }
   render () {
     return (<div> 
