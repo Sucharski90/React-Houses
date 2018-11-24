@@ -149,7 +149,7 @@ var App = function (_Component) {
       max_price: 10000000,
       min_floor_space: 0,
       max_floor_space: 5000
-    }, _defineProperty(_this$state, 'min_floor_space', 0), _defineProperty(_this$state, 'max_floor_space', 5000), _defineProperty(_this$state, 'elevator', false), _defineProperty(_this$state, 'finished_basement', false), _defineProperty(_this$state, 'gym', false), _defineProperty(_this$state, 'swiming_pool', false), _defineProperty(_this$state, 'filteredData', _listingsData2.default), _this$state);
+    }, _defineProperty(_this$state, 'min_floor_space', 0), _defineProperty(_this$state, 'max_floor_space', 5000), _defineProperty(_this$state, 'elevator', false), _defineProperty(_this$state, 'finished_basement', false), _defineProperty(_this$state, 'gym', false), _defineProperty(_this$state, 'swiming_pool', false), _defineProperty(_this$state, 'filteredData', _listingsData2.default), _defineProperty(_this$state, 'populateFormData', ""), _this$state);
     _this.change = _this.change.bind(_this);
     _this.filteredData = _this.filteredData.bind(_this);
     _this.populateForm = _this.populateForm.bind(_this);
@@ -218,6 +218,14 @@ var App = function (_Component) {
       });
       rooms = new Set(rooms);
       rooms = [].concat(_toConsumableArray(rooms));
+
+      this.setState({
+        populateFormData: {
+          homeTypes: homeTypes,
+          rooms: rooms,
+          cities: cities
+        }
+      });
     }
   }, {
     key: 'render',
