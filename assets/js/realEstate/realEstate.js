@@ -69,22 +69,28 @@ class App extends Component {
     // city
     let cities = this.state.listingsData.map((item) => {
       return item.cities
-      cities = [...cities]
     })
     cities = new Set(cities)
+    cities = [...cities]
+
+
     // types
     let homeTypes = this.state.listingsData.map((item) => {
       return item.homeType
-      homeTypes = [...homeTypes]
     })
-    cities = new Set(cities)
+    homeTypes = new Set(homeTypes)
+    homeTypes = [...homeTypes]
+
+
     // rooms
     let rooms = this.state.listingsData.map((item) => {
       return item.rooms
-      rooms = [...rooms]
     })
-    cities = new Set(cities)
+    rooms = new Set(rooms)
+    rooms = [...rooms]
   }
+
+  
   render () {
     return (<div> 
       <Header />

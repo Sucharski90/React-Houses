@@ -201,21 +201,23 @@ var App = function (_Component) {
       // city
       var cities = this.state.listingsData.map(function (item) {
         return item.cities;
-        cities = [].concat(_toConsumableArray(cities));
       });
       cities = new Set(cities);
+      cities = [].concat(_toConsumableArray(cities));
+
       // types
       var homeTypes = this.state.listingsData.map(function (item) {
         return item.homeType;
-        homeTypes = [].concat(_toConsumableArray(homeTypes));
       });
-      cities = new Set(cities);
+      homeTypes = new Set(homeTypes);
+      homeTypes = [].concat(_toConsumableArray(homeTypes));
+
       // rooms
       var rooms = this.state.listingsData.map(function (item) {
         return item.rooms;
-        rooms = [].concat(_toConsumableArray(rooms));
       });
-      cities = new Set(cities);
+      rooms = new Set(rooms);
+      rooms = [].concat(_toConsumableArray(rooms));
     }
   }, {
     key: 'render',
