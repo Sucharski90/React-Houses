@@ -29,7 +29,7 @@ class App extends Component {
     }
     this.change = this.change.bind(this)
     this.filteredData = this.filteredData.bind(this)
-    this.populateForm = this.populateForm.bind(this)
+    this.populateForms = this.populateForms.bind(this)
   }
   change (event) {
     let name = event.target.name
@@ -96,6 +96,8 @@ class App extends Component {
         rooms,
         cities
       }
+    }, () => {
+      console.log(this.state)
     })
   }
 

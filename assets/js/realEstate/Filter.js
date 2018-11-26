@@ -5,6 +5,11 @@ export default class Filter extends Component {
     super()
     
   }
+
+  componentWillMount() {
+      this.props.populateAction();
+  }
+
   render () {
     return (
         <section id="filter">

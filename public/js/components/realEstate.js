@@ -152,7 +152,7 @@ var App = function (_Component) {
     }, _defineProperty(_this$state, 'min_floor_space', 0), _defineProperty(_this$state, 'max_floor_space', 5000), _defineProperty(_this$state, 'elevator', false), _defineProperty(_this$state, 'finished_basement', false), _defineProperty(_this$state, 'gym', false), _defineProperty(_this$state, 'swiming_pool', false), _defineProperty(_this$state, 'filteredData', _listingsData2.default), _defineProperty(_this$state, 'populateFormData', ""), _this$state);
     _this.change = _this.change.bind(_this);
     _this.filteredData = _this.filteredData.bind(_this);
-    _this.populateForm = _this.populateForm.bind(_this);
+    _this.populateForms = _this.populateForms.bind(_this);
     return _this;
   }
 
@@ -196,8 +196,10 @@ var App = function (_Component) {
       });
     }
   }, {
-    key: 'populateForm',
-    value: function populateForm() {
+    key: 'populateForms',
+    value: function populateForms() {
+      var _this4 = this;
+
       // city
       var cities = this.state.listingsData.map(function (item) {
         return item.cities;
@@ -225,6 +227,8 @@ var App = function (_Component) {
           rooms: rooms,
           cities: cities
         }
+      }, function () {
+        console.log(_this4.state);
       });
     }
   }, {
@@ -237,7 +241,9 @@ var App = function (_Component) {
         _react2.default.createElement(
           'section',
           { id: 'content-area' },
-          _react2.default.createElement(_Filter2.default, { change: this.change, globalState: this.state }),
+          _react2.default.createElement(_Filter2.default, { change: this.change, globalState: this.state,
+            populateAction: this.populateForms
+          }),
           _react2.default.createElement(_Listings2.default, { listingsData: this.state.filteredData })
         )
       );
@@ -287,6 +293,11 @@ var Filter = function (_Component) {
     }
 
     _createClass(Filter, [{
+        key: "componentWillMount",
+        value: function componentWillMount() {
+            this.props.populateAction();
+        }
+    }, {
         key: "render",
         value: function render() {
             return _react2.default.createElement(
