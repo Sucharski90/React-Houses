@@ -10,11 +10,12 @@ export default class Filter extends Component {
   }
 
   componentWillMount() {
-      this.props.populateAction();
+      this.props.populateAction()
   }
   cities() {
       if(this.props.globalState.populateFormsData.cities != undefined) {
         let {cities} = this.props.globalState.populateFormsData
+        console.log(cities)
         return cities.map((item) => {
             return(
                 <option key={item} value={item}>{item}</option>
@@ -23,7 +24,7 @@ export default class Filter extends Component {
       }
   }
 
-  homeType() {
+  homeTypes() {
 
   }
 

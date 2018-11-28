@@ -25,7 +25,7 @@ class App extends Component {
       gym: false,
       swiming_pool: false,
       filteredData : listingsData,
-      populateFormsData : "",
+      populateFormsData : '',
     }
     this.change = this.change.bind(this)
     this.filteredData = this.filteredData.bind(this)
@@ -69,7 +69,7 @@ class App extends Component {
   populateForms() {
     // city
     let cities = this.state.listingsData.map((item) => {
-      return item.cities
+      return item.city
     })
     cities = new Set(cities)
     cities = [...cities]
@@ -84,16 +84,16 @@ class App extends Component {
 
 
     // rooms
-    let rooms = this.state.listingsData.map((item) => {
+    let bedrooms = this.state.listingsData.map((item) => {
       return item.rooms
     })
-    rooms = new Set(rooms)
-    rooms = [...rooms]
+    bedrooms = new Set(bedrooms)
+    bedrooms = [...bedrooms]
 
     this.setState({
       populateFormsData: {
         homeTypes,
-        rooms,
+        bedrooms,
         cities
       }
     }, () => {
@@ -118,6 +118,3 @@ class App extends Component {
 const app = document.getElementById('app')
 
 ReactDOM.render(<App />, app)
-
-
-

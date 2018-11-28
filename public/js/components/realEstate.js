@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var listingsData = [{
     address: '43 heart street',
-    cities: 'Farmingdale',
+    city: 'Farmingdale',
     state: 'NY',
     rooms: 2,
     price: 230000,
@@ -21,7 +21,7 @@ var listingsData = [{
     image: 'http://ajackpot.com/images/inside-millionaire-homes/data1/images/insidemillionaireshouses15.jpg'
 }, {
     address: '48 Fallwood road',
-    cities: 'Huntington',
+    city: 'Huntington',
     state: 'NC',
     rooms: 6,
     price: 450000,
@@ -31,7 +31,7 @@ var listingsData = [{
     image: 'http://tasteofcountry.com/files/2018/08/spectacular-celebrity-homes.jpg?w=980&q=75'
 }, {
     address: '30 Oak Avenue',
-    cities: 'Bellmore',
+    city: 'Bellmore',
     state: 'NY',
     rooms: 5,
     price: 600000,
@@ -41,7 +41,7 @@ var listingsData = [{
     image: 'https://lentinemarine.com/wp-content/uploads/simple-house-painting-inspirations-one-total_482229.jpg'
 }, {
     address: '90 Broadway Street',
-    cities: 'Rockville Center',
+    city: 'Rockville Center',
     state: 'NY',
     rooms: 3,
     price: 420000,
@@ -51,7 +51,7 @@ var listingsData = [{
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbREg69bXlEEj_vXOdss3glg4Q_v_0VOf8K46NPcz5YHMcEOJlHg'
 }, {
     address: '3 Woodward Parkway',
-    cities: 'Farmingdale',
+    city: 'Farmingdale',
     state: 'NJ',
     rooms: 4,
     price: 2800000,
@@ -61,7 +61,7 @@ var listingsData = [{
     image: 'https://bahayofw.com/wp-content/uploads/2017/08/FB_IMG_1503406401235-1.jpg'
 }, {
     address: '56 Maple Road',
-    cities: 'Massapequa',
+    city: 'Massapequa',
     state: 'NY',
     rooms: 2,
     price: 180000,
@@ -71,7 +71,7 @@ var listingsData = [{
     image: 'http://erinnsbeauty.com/wp-content/uploads/2018/06/simple-houses-classy-design-.jpg'
 }, {
     address: '34 Grand Avenue',
-    cities: 'Bethpage',
+    city: 'Bethpage',
     state: 'NY',
     rooms: 6,
     price: 250000,
@@ -149,7 +149,7 @@ var App = function (_Component) {
       max_price: 10000000,
       min_floor_space: 0,
       max_floor_space: 5000
-    }, _defineProperty(_this$state, 'min_floor_space', 0), _defineProperty(_this$state, 'max_floor_space', 5000), _defineProperty(_this$state, 'elevator', false), _defineProperty(_this$state, 'finished_basement', false), _defineProperty(_this$state, 'gym', false), _defineProperty(_this$state, 'swiming_pool', false), _defineProperty(_this$state, 'filteredData', _listingsData2.default), _defineProperty(_this$state, 'populateFormsData', ""), _this$state);
+    }, _defineProperty(_this$state, 'min_floor_space', 0), _defineProperty(_this$state, 'max_floor_space', 5000), _defineProperty(_this$state, 'elevator', false), _defineProperty(_this$state, 'finished_basement', false), _defineProperty(_this$state, 'gym', false), _defineProperty(_this$state, 'swiming_pool', false), _defineProperty(_this$state, 'filteredData', _listingsData2.default), _defineProperty(_this$state, 'populateFormsData', ''), _this$state);
     _this.change = _this.change.bind(_this);
     _this.filteredData = _this.filteredData.bind(_this);
     _this.populateForms = _this.populateForms.bind(_this);
@@ -202,7 +202,7 @@ var App = function (_Component) {
 
       // city
       var cities = this.state.listingsData.map(function (item) {
-        return item.cities;
+        return item.city;
       });
       cities = new Set(cities);
       cities = [].concat(_toConsumableArray(cities));
@@ -215,16 +215,16 @@ var App = function (_Component) {
       homeTypes = [].concat(_toConsumableArray(homeTypes));
 
       // rooms
-      var rooms = this.state.listingsData.map(function (item) {
+      var bedrooms = this.state.listingsData.map(function (item) {
         return item.rooms;
       });
-      rooms = new Set(rooms);
-      rooms = [].concat(_toConsumableArray(rooms));
+      bedrooms = new Set(bedrooms);
+      bedrooms = [].concat(_toConsumableArray(bedrooms));
 
       this.setState({
         populateFormsData: {
           homeTypes: homeTypes,
-          rooms: rooms,
+          bedrooms: bedrooms,
           cities: cities
         }
       }, function () {
@@ -309,6 +309,7 @@ var Filter = function (_Component) {
             if (this.props.globalState.populateFormsData.cities != undefined) {
                 var cities = this.props.globalState.populateFormsData.cities;
 
+                console.log(cities);
                 return cities.map(function (item) {
                     return _react2.default.createElement(
                         "option",
@@ -319,8 +320,8 @@ var Filter = function (_Component) {
             }
         }
     }, {
-        key: "homeType",
-        value: function homeType() {}
+        key: "homeTypes",
+        value: function homeTypes() {}
     }, {
         key: "bedrooms",
         value: function bedrooms() {}

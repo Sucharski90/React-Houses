@@ -96,6 +96,3 @@ export default class Listings extends Component {
   }
   
 }
-
-
-

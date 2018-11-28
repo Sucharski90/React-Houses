@@ -1,7 +1,7 @@
 var listingsData = [
     {
         address: '43 heart street',
-        cities: 'Farmingdale',
+        city: 'Farmingdale',
         state: 'NY',
         rooms: 2,
         price: 230000,
@@ -14,7 +14,7 @@ var listingsData = [
     },
     {
         address: '48 Fallwood road',
-        cities: 'Huntington',
+        city: 'Huntington',
         state: 'NC',
         rooms: 6,
         price: 450000,
@@ -29,7 +29,7 @@ var listingsData = [
     },
     {
         address: '30 Oak Avenue',
-        cities: 'Bellmore',
+        city: 'Bellmore',
         state: 'NY',
         rooms: 5,
         price: 600000,
@@ -43,7 +43,7 @@ var listingsData = [
     },
     {
         address: '90 Broadway Street',
-        cities: 'Rockville Center',
+        city: 'Rockville Center',
         state: 'NY',
         rooms: 3,
         price: 420000,
@@ -57,7 +57,7 @@ var listingsData = [
     },
     {
         address: '3 Woodward Parkway',
-        cities: 'Farmingdale',
+        city: 'Farmingdale',
         state: 'NJ',
         rooms: 4,
         price: 2800000,
@@ -70,7 +70,7 @@ var listingsData = [
     },
     {
         address: '56 Maple Road',
-        cities: 'Massapequa',
+        city: 'Massapequa',
         state: 'NY',
         rooms: 2,
         price: 180000,
@@ -83,7 +83,7 @@ var listingsData = [
     },
     {
         address: '34 Grand Avenue',
-        cities: 'Bethpage',
+        city: 'Bethpage',
         state: 'NY',
         rooms: 6,
         price: 250000,
