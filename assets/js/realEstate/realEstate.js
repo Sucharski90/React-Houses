@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       name: 'Matt',
       listingsData,
-      city : "All",
+      cities : "All",
       homeType : "All",
       bedrooms : "0",
       min_price : 0,
@@ -25,7 +25,7 @@ class App extends Component {
       gym: false,
       swiming_pool: false,
       filteredData : listingsData,
-      populateFormData : "",
+      populateFormsData : "",
     }
     this.change = this.change.bind(this)
     this.filteredData = this.filteredData.bind(this)
@@ -48,9 +48,9 @@ class App extends Component {
         return item.price >= this.state.min_price && item.price <= this.state.max_price && item.floorSpace >= this.state.min_floor_space && item.floorSpace <= this.state.max_floor_space && item.rooms >= this.state.bedrooms
       })
 
-      if(this.state.city != "All"){
+      if(this.state.cities != "All"){
         newData = newData.filter((item) => {
-          return item.city == this.state.city
+          return item.cities == this.state.cities
         })
       }
 
@@ -91,7 +91,7 @@ class App extends Component {
     rooms = [...rooms]
 
     this.setState({
-      populateFormData: {
+      populateFormsData: {
         homeTypes,
         rooms,
         cities

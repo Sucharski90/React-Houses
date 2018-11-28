@@ -1,7 +1,7 @@
 var listingsData = [
     {
         address: '43 heart street',
-        city: 'Farmingdale',
+        cities: 'Farmingdale',
         state: 'NY',
         rooms: 2,
         price: 230000,
@@ -14,7 +14,7 @@ var listingsData = [
     },
     {
         address: '48 Fallwood road',
-        city: 'Huntington',
+        cities: 'Huntington',
         state: 'NC',
         rooms: 6,
         price: 450000,
@@ -29,7 +29,7 @@ var listingsData = [
     },
     {
         address: '30 Oak Avenue',
-        city: 'Bellmore',
+        cities: 'Bellmore',
         state: 'NY',
         rooms: 5,
         price: 600000,
@@ -43,7 +43,7 @@ var listingsData = [
     },
     {
         address: '90 Broadway Street',
-        city: 'Rockville Center',
+        cities: 'Rockville Center',
         state: 'NY',
         rooms: 3,
         price: 420000,
@@ -57,7 +57,7 @@ var listingsData = [
     },
     {
         address: '3 Woodward Parkway',
-        city: 'Farmingdale',
+        cities: 'Farmingdale',
         state: 'NJ',
         rooms: 4,
         price: 2800000,
@@ -65,12 +65,12 @@ var listingsData = [
         extras: [
             'pool'
         ],
-        homeType: 'house',
+        homeType: 'Condo',
         image: 'https://bahayofw.com/wp-content/uploads/2017/08/FB_IMG_1503406401235-1.jpg'
     },
     {
         address: '56 Maple Road',
-        city: 'Massapequa',
+        cities: 'Massapequa',
         state: 'NY',
         rooms: 2,
         price: 180000,
@@ -83,7 +83,7 @@ var listingsData = [
     },
     {
         address: '34 Grand Avenue',
-        city: 'Bethpage',
+        cities: 'Bethpage',
         state: 'NY',
         rooms: 6,
         price: 250000,

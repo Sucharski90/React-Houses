@@ -3,11 +3,32 @@ import React, { Component} from 'react'
 export default class Filter extends Component {
   constructor () {
     super()
-    
+    this.state = {
+        name : "matt"
+    }
+    this.cities = this.cities.bind(this)
   }
 
   componentWillMount() {
       this.props.populateAction();
+  }
+  cities() {
+      if(this.props.globalState.populateFormsData.cities != undefined) {
+        let {cities} = this.props.globalState.populateFormsData
+        return cities.map((item) => {
+            return(
+                <option key={item} value={item}>{item}</option>
+            )
+        })
+      }
+  }
+
+  homeType() {
+
+  }
+
+  bedrooms() {
+
   }
 
   render () {
@@ -18,8 +39,7 @@ export default class Filter extends Component {
         <label htmlFor="city">City</label>
         <select name="city" className="filters city" onChange={this.props.change}>
             <option value="All">All Cities</option>
-            <option value="Farmingdale">Farmingdale</option>
-            <option value="Massapequa">Massapequa</option>
+            {this.cities()}
         </select>
         <label htmlFor="homeType">Type</label>
         <select name="homeType" className="filters homeType" onChange={this.props.change}>

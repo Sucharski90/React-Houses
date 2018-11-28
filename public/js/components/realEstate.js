@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var listingsData = [{
     address: '43 heart street',
-    city: 'Farmingdale',
+    cities: 'Farmingdale',
     state: 'NY',
     rooms: 2,
     price: 230000,
@@ -21,7 +21,7 @@ var listingsData = [{
     image: 'http://ajackpot.com/images/inside-millionaire-homes/data1/images/insidemillionaireshouses15.jpg'
 }, {
     address: '48 Fallwood road',
-    city: 'Huntington',
+    cities: 'Huntington',
     state: 'NC',
     rooms: 6,
     price: 450000,
@@ -31,7 +31,7 @@ var listingsData = [{
     image: 'http://tasteofcountry.com/files/2018/08/spectacular-celebrity-homes.jpg?w=980&q=75'
 }, {
     address: '30 Oak Avenue',
-    city: 'Bellmore',
+    cities: 'Bellmore',
     state: 'NY',
     rooms: 5,
     price: 600000,
@@ -41,7 +41,7 @@ var listingsData = [{
     image: 'https://lentinemarine.com/wp-content/uploads/simple-house-painting-inspirations-one-total_482229.jpg'
 }, {
     address: '90 Broadway Street',
-    city: 'Rockville Center',
+    cities: 'Rockville Center',
     state: 'NY',
     rooms: 3,
     price: 420000,
@@ -51,17 +51,17 @@ var listingsData = [{
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbREg69bXlEEj_vXOdss3glg4Q_v_0VOf8K46NPcz5YHMcEOJlHg'
 }, {
     address: '3 Woodward Parkway',
-    city: 'Farmingdale',
+    cities: 'Farmingdale',
     state: 'NJ',
     rooms: 4,
     price: 2800000,
     floorSpace: 1400,
     extras: ['pool'],
-    homeType: 'house',
+    homeType: 'Condo',
     image: 'https://bahayofw.com/wp-content/uploads/2017/08/FB_IMG_1503406401235-1.jpg'
 }, {
     address: '56 Maple Road',
-    city: 'Massapequa',
+    cities: 'Massapequa',
     state: 'NY',
     rooms: 2,
     price: 180000,
@@ -71,7 +71,7 @@ var listingsData = [{
     image: 'http://erinnsbeauty.com/wp-content/uploads/2018/06/simple-houses-classy-design-.jpg'
 }, {
     address: '34 Grand Avenue',
-    city: 'Bethpage',
+    cities: 'Bethpage',
     state: 'NY',
     rooms: 6,
     price: 250000,
@@ -142,14 +142,14 @@ var App = function (_Component) {
     _this.state = (_this$state = {
       name: 'Matt',
       listingsData: _listingsData2.default,
-      city: "All",
+      cities: "All",
       homeType: "All",
       bedrooms: "0",
       min_price: 0,
       max_price: 10000000,
       min_floor_space: 0,
       max_floor_space: 5000
-    }, _defineProperty(_this$state, 'min_floor_space', 0), _defineProperty(_this$state, 'max_floor_space', 5000), _defineProperty(_this$state, 'elevator', false), _defineProperty(_this$state, 'finished_basement', false), _defineProperty(_this$state, 'gym', false), _defineProperty(_this$state, 'swiming_pool', false), _defineProperty(_this$state, 'filteredData', _listingsData2.default), _defineProperty(_this$state, 'populateFormData', ""), _this$state);
+    }, _defineProperty(_this$state, 'min_floor_space', 0), _defineProperty(_this$state, 'max_floor_space', 5000), _defineProperty(_this$state, 'elevator', false), _defineProperty(_this$state, 'finished_basement', false), _defineProperty(_this$state, 'gym', false), _defineProperty(_this$state, 'swiming_pool', false), _defineProperty(_this$state, 'filteredData', _listingsData2.default), _defineProperty(_this$state, 'populateFormsData', ""), _this$state);
     _this.change = _this.change.bind(_this);
     _this.filteredData = _this.filteredData.bind(_this);
     _this.populateForms = _this.populateForms.bind(_this);
@@ -178,9 +178,9 @@ var App = function (_Component) {
         return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price && item.floorSpace >= _this3.state.min_floor_space && item.floorSpace <= _this3.state.max_floor_space && item.rooms >= _this3.state.bedrooms;
       });
 
-      if (this.state.city != "All") {
+      if (this.state.cities != "All") {
         newData = newData.filter(function (item) {
-          return item.city == _this3.state.city;
+          return item.cities == _this3.state.cities;
         });
       }
 
@@ -222,7 +222,7 @@ var App = function (_Component) {
       rooms = [].concat(_toConsumableArray(rooms));
 
       this.setState({
-        populateFormData: {
+        populateFormsData: {
           homeTypes: homeTypes,
           rooms: rooms,
           cities: cities
@@ -289,7 +289,13 @@ var Filter = function (_Component) {
     function Filter() {
         _classCallCheck(this, Filter);
 
-        return _possibleConstructorReturn(this, (Filter.__proto__ || Object.getPrototypeOf(Filter)).call(this));
+        var _this = _possibleConstructorReturn(this, (Filter.__proto__ || Object.getPrototypeOf(Filter)).call(this));
+
+        _this.state = {
+            name: "matt"
+        };
+        _this.cities = _this.cities.bind(_this);
+        return _this;
     }
 
     _createClass(Filter, [{
@@ -297,6 +303,27 @@ var Filter = function (_Component) {
         value: function componentWillMount() {
             this.props.populateAction();
         }
+    }, {
+        key: "cities",
+        value: function cities() {
+            if (this.props.globalState.populateFormsData.cities != undefined) {
+                var cities = this.props.globalState.populateFormsData.cities;
+
+                return cities.map(function (item) {
+                    return _react2.default.createElement(
+                        "option",
+                        { key: item, value: item },
+                        item
+                    );
+                });
+            }
+        }
+    }, {
+        key: "homeType",
+        value: function homeType() {}
+    }, {
+        key: "bedrooms",
+        value: function bedrooms() {}
     }, {
         key: "render",
         value: function render() {
@@ -324,16 +351,7 @@ var Filter = function (_Component) {
                             { value: "All" },
                             "All Cities"
                         ),
-                        _react2.default.createElement(
-                            "option",
-                            { value: "Farmingdale" },
-                            "Farmingdale"
-                        ),
-                        _react2.default.createElement(
-                            "option",
-                            { value: "Massapequa" },
-                            "Massapequa"
-                        )
+                        this.cities()
                     ),
                     _react2.default.createElement(
                         "label",
