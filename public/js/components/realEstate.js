@@ -178,15 +178,15 @@ var App = function (_Component) {
         return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price && item.floorSpace >= _this3.state.min_floor_space && item.floorSpace <= _this3.state.max_floor_space && item.rooms >= _this3.state.bedrooms;
       });
 
-      if (this.state.cities != "All") {
+      if (this.state.city != "All") {
         newData = newData.filter(function (item) {
-          return item.cities == _this3.state.cities;
+          return item.city == _this3.state.city;
         });
       }
 
       if (this.state.homeType != "All") {
         newData = newData.filter(function (item) {
-          return item.homeType == _this3.state.homeType;
+          return item.homeType == _this3.state.homeTypes;
         });
       }
 
@@ -309,7 +309,6 @@ var Filter = function (_Component) {
             if (this.props.globalState.populateFormsData.cities != undefined) {
                 var cities = this.props.globalState.populateFormsData.cities;
 
-                console.log(cities);
                 return cities.map(function (item) {
                     return _react2.default.createElement(
                         "option",
@@ -321,7 +320,19 @@ var Filter = function (_Component) {
         }
     }, {
         key: "homeTypes",
-        value: function homeTypes() {}
+        value: function homeTypes() {
+            if (this.props.globalState.populateFormsData.homeTypes != undefined) {
+                var homeTypes = this.props.globalState.populateFormsData.homeTypes;
+
+                return homeTypes.map(function (item) {
+                    return _react2.default.createElement(
+                        "option",
+                        { key: item, value: item },
+                        item
+                    );
+                });
+            }
+        }
     }, {
         key: "bedrooms",
         value: function bedrooms() {}
@@ -367,21 +378,7 @@ var Filter = function (_Component) {
                             { value: "All" },
                             "All Types"
                         ),
-                        _react2.default.createElement(
-                            "option",
-                            { value: "House" },
-                            "House"
-                        ),
-                        _react2.default.createElement(
-                            "option",
-                            { value: "Condo" },
-                            "Condo"
-                        ),
-                        _react2.default.createElement(
-                            "option",
-                            { value: "Apartment" },
-                            "Apartment"
-                        )
+                        this.homeTypes()
                     ),
                     _react2.default.createElement(
                         "label",

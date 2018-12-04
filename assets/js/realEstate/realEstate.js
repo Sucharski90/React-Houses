@@ -48,15 +48,15 @@ class App extends Component {
         return item.price >= this.state.min_price && item.price <= this.state.max_price && item.floorSpace >= this.state.min_floor_space && item.floorSpace <= this.state.max_floor_space && item.rooms >= this.state.bedrooms
       })
 
-      if(this.state.cities != "All"){
+      if(this.state.city != "All"){
         newData = newData.filter((item) => {
-          return item.cities == this.state.cities
+          return item.city == this.state.city
         })
       }
 
       if(this.state.homeType != "All"){
         newData = newData.filter((item) => {
-          return item.homeType == this.state.homeType
+          return item.homeType == this.state.homeTypes
         })
       }
 
