@@ -184,9 +184,9 @@ var App = function (_Component) {
         });
       }
 
-      if (this.state.homeType != "All") {
+      if (this.state.homeTypes != "All") {
         newData = newData.filter(function (item) {
-          return item.homeType == _this3.state.homeTypes;
+          return item.homeTypes == _this3.state.homeTypes;
         });
       }
 
@@ -295,6 +295,8 @@ var Filter = function (_Component) {
             name: "matt"
         };
         _this.cities = _this.cities.bind(_this);
+        _this.homeTypes = _this.homeTypes.bind(_this);
+        _this.bedrooms = _this.bedrooms.bind(_this);
         return _this;
     }
 
@@ -335,7 +337,20 @@ var Filter = function (_Component) {
         }
     }, {
         key: "bedrooms",
-        value: function bedrooms() {}
+        value: function bedrooms() {
+            if (this.props.globalState.populateFormsData.bedrooms != undefined) {
+                var bedrooms = this.props.globalState.populateFormsData.bedrooms;
+
+                return bedrooms.map(function (item) {
+                    return _react2.default.createElement(
+                        "option",
+                        { key: item, value: item },
+                        item,
+                        "+ BR"
+                    );
+                });
+            }
+        }
     }, {
         key: "render",
         value: function render() {
@@ -393,36 +408,7 @@ var Filter = function (_Component) {
                             { value: "0" },
                             "0+ BR"
                         ),
-                        _react2.default.createElement(
-                            "option",
-                            { value: "1" },
-                            "1+ BR"
-                        ),
-                        _react2.default.createElement(
-                            "option",
-                            { value: "2" },
-                            "2+ BR"
-                        ),
-                        _react2.default.createElement(
-                            "option",
-                            { value: "3" },
-                            "3+ BR"
-                        ),
-                        _react2.default.createElement(
-                            "option",
-                            { value: "4" },
-                            "4+ BR"
-                        ),
-                        _react2.default.createElement(
-                            "option",
-                            { value: "5" },
-                            "5+ BR"
-                        ),
-                        _react2.default.createElement(
-                            "option",
-                            { value: "6" },
-                            "6+ BR"
-                        )
+                        this.bedrooms()
                     ),
                     _react2.default.createElement(
                         "div",

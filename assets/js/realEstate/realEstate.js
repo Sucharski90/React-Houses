@@ -54,9 +54,9 @@ class App extends Component {
         })
       }
 
-      if(this.state.homeType != "All"){
+      if(this.state.homeTypes != "All"){
         newData = newData.filter((item) => {
-          return item.homeType == this.state.homeTypes
+          return item.homeTypes == this.state.homeTypes
         })
       }
 
